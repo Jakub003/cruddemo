@@ -16,9 +16,19 @@
         
     </style>
 </head>
-<body class="h-screen">
+<body x-data="{darkMode: false}" class="flex h-screen" x-bind:class="{ 'dark' : darkMode, '': !darkMode}" x-cloak>
+    {{-- Navigation Menu --}}
+    @include('layouts/nav')
 
-    @yield('content')
+    {{-- Left Sidebar --}}
+    <div class="p-4 flex flex-col w-70 min-h-full border-r bg-white border-gray-200 flex-shrink-0 dark:bg-gray-500">
+        @yield('sidebar')
+    </div>
+
+    {{-- Main Content --}}
+    <div class="p-4 flex flex-col space-y-4 w-full bg-blueGray-100">
+        @yield('content')
+    </div>
 
 </body>
 </html>
