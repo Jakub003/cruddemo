@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('sidebar')
-    Error of $kanbans not found
-    {{-- @include('titles') --}}
+    @include('components/titles')
 @endsection
 
 
