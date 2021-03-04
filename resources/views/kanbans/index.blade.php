@@ -9,6 +9,12 @@
 
     <h2 class="text-2xl font-semibold">All Projects at kanbans/index</h2>
 
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
+
     @foreach ($kanbans as $kanban)
     
     <div class="flex space-x-4">    
