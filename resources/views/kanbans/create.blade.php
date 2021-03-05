@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="flex flex-col space-y-6">
+<div class="p-4 flex flex-col space-y-6">
     {{-- Project Title --}}
     <div class="flex flex-col space-y-4">
         <div class="flex space-x-4">
@@ -46,16 +46,6 @@
             <button type="submit" class="bg-blue-400 rounded py-1 px-3 mt-10 text-gray-100 h-10 focus:outline-none hover:bg-blue-500 text-sm "> Save </button>
 
         </form>
-
-        {{-- Preview --}}
-        <div class="bg-white border-2 rounded border-gray-800 space-x-4">
-            <div class="px-4 py-2 bg-gray-800 text-white w-full">
-                <h2 class="text-lg font-semibold">Preview</h2>
-            </div>
-            {{-- Content --}}
-            @include('components/kanban_title')
-        </div>
-
 
         <hr>
     </div>

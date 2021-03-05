@@ -6,15 +6,9 @@
 
 
 @section('content')
-    <div class="flex space-x-4">
-        <h2 class="text-2xl font-semibold">All Projects at kanbans/index</h2>
-        <a href="{{ route('kanban.create') }}">
-            <div class="bg-green-300 hover:bg-green-400 font-semibold rounded h-8 py-1 px-3 text-white cursor-pointer">
-                <p>Create</p>
-            </div>
-        </a>
-    </div>
-    
+    <div class="p-4 flex space-x-4">
+        <h2 class="text-2xl font-semibold">Kanban Dashboard View</h2>
+    </div>  
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success" x-data = '{show: true}' x-show='show' x-init='setTimeOut(()=> show = false, 5)' >
@@ -24,7 +18,7 @@
 
     @foreach ($kanbans as $kanban)
     
-    <div class="flex space-x-4">
+    <div class="px-4 flex space-x-4">
         {{-- Display --}}
         <div class="h-8 w-8 px-2 py-1 rounded {{ $kanban->color }} ">
             <i class=" text-base {{ $kanban->icon }} "></i>
