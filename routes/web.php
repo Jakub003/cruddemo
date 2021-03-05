@@ -3,9 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KanbanController;
   
+Route::get('/kanbans', [KanbanController::class, 'index'])->name('kanban');
+// Route::get('/test', [KanbanController::class, 'index'])->name('kanban');
 
-Route::get('kanbans', [KanbanController::class, 'index']);
 
+// Route::get('kanbans/{kanban}', [KanbanController::class, 'destroy']);
 Route::resource('kanbans', KanbanController::class);
 
 

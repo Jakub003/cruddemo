@@ -16,6 +16,26 @@ class KanbanController extends Controller
         
     }
 
+    // Adding Content and Saving It
+    public function create()
+    {
+        return view('kanbans.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'color' => 'required',
+            'icon' => 'required',
+            'title' => 'required',
+        ]);
+    
+        Kanban::create($request->all());
+     
+        return redirect()->route('kanbans.index')
+                        ->with('success','Title created successfully.');
+    }
+
     // Delete Content - When button is clicked on a specific page
     public function destroy(Kanban $kanban)
     {

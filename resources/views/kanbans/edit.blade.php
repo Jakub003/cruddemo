@@ -7,6 +7,6 @@
 
 @section('content')
 
-    Edit Page
+    
         
 @endsection
