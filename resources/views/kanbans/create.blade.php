@@ -11,10 +11,10 @@
     <div class="flex flex-col space-y-4">
         <div class="flex space-x-4">
             <h2 class="font-semibold text-xl">Create New Kanban Icon, Color and Title</h2>
-            <a class="btn btn-primary h-8" href="{{ route('kanbans.index') }}"> Back</a>
+            <a class="btn btn-primary h-8" href="{{ route('kanban') }}"> Back</a>
         </div>
 
-        <form method="POST" action="{{ route('kanbans.store') }}" class="flex space-x-4">
+        <form method="POST" action="{{ route('kanban.store') }}" class="flex space-x-4">
         @csrf 
             <div class="flex-col">
                 <h2 class="font-semibold">Color</h2>

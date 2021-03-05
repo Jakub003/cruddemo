@@ -16,6 +16,12 @@ class KanbanController extends Controller
         
     }
 
+    // Display Individual Kanban Projects
+    public function show(Kanban $kanban)
+    {
+        return view('kanbans.show',compact('kanban'));
+    } 
+
     // Adding Content and Saving It
     public function create()
     {
@@ -32,7 +38,7 @@ class KanbanController extends Controller
     
         Kanban::create($request->all());
      
-        return redirect()->route('kanbans.index')
+        return redirect()->route('kanban')
                         ->with('success','Title created successfully.');
     }
 
@@ -52,7 +58,7 @@ class KanbanController extends Controller
     
         $kanban->update($request->all());
     
-        return redirect()->route('kanbans.index')
+        return redirect()->route('kanban')
                         ->with('success','Title updated successfully');
     }
 
@@ -61,7 +67,7 @@ class KanbanController extends Controller
     {
         $kanban->delete();
     
-        return redirect()->route('kanbans.index')
+        return redirect()->route('kanban')
                         ->with('success','Item deleted successfully');
     }
 

@@ -8,7 +8,7 @@
 @section('content')
     <div class="flex space-x-4">
         <h2 class="text-2xl font-semibold">All Projects at kanbans/index</h2>
-        <a href="{{ route('kanbans.create') }}">
+        <a href="{{ route('kanban.create') }}">
             <div class="bg-green-300 hover:bg-green-400 font-semibold rounded h-8 py-1 px-3 text-white cursor-pointer">
                 <p>Create</p>
             </div>
@@ -32,10 +32,10 @@
         <h3 class="h-8 text-base font-semibold mt-1">{{ $kanban->title }}</h3>   
         
         {{-- Edit --}}
-        <a class="h-8 w-8 text-yellow-500 rounded" href="{{ route('kanbans.edit',$kanban->id) }}"><i class=" bi bi-pencil-square "></i></a>
+        <a class="h-8 w-8 text-yellow-500 rounded" href="{{ route('kanban.edit',$kanban->id) }}"><i class=" bi bi-pencil-square "></i></a>
     
         {{-- Delete --}}
-        <form action="{{ route('kanbans.destroy',$kanban->id) }}" method="POST" class="h-8 w-8">
+        <form action="{{ route('kanban.destroy',$kanban->id) }}" method="POST" class="h-8 w-8">
             @csrf
             @method('DELETE')
             <button type="submit" class="  text-red-200 hover:text-red-500 text-base focus:outline-none">
