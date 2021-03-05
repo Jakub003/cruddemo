@@ -36,6 +36,26 @@ class KanbanController extends Controller
                         ->with('success','Title created successfully.');
     }
 
+    // Update or Edit Items
+    public function edit(Kanban $kanban)
+    {
+        return view('kanbans.edit',compact('kanban'));
+    }
+
+    public function update(Request $request, Kanban $kanban)
+    {
+        $request->validate([
+            'color' => 'required',
+            'icon' => 'required',
+            'title' => 'required',
+        ]);
+    
+        $kanban->update($request->all());
+    
+        return redirect()->route('kanbans.index')
+                        ->with('success','Title updated successfully');
+    }
+
     // Delete Content - When button is clicked on a specific page
     public function destroy(Kanban $kanban)
     {

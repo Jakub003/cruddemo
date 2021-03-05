@@ -4,14 +4,15 @@
     @include('components/titles')
 @endsection
 
-
 @section('content')
 
 <div class="flex flex-col space-y-6">
     {{-- Project Title --}}
     <div class="flex flex-col space-y-4">
-        <h2 class="font-semibold text-xl">Create New Kanban Icon, Color and Title</h2>
-
+        <div class="flex space-x-4">
+            <h2 class="font-semibold text-xl">Create New Kanban Icon, Color and Title</h2>
+            <a class="btn btn-primary h-8" href="{{ route('kanbans.index') }}"> Back</a>
+        </div>
 
         <form method="POST" action="{{ route('kanbans.store') }}" class="flex space-x-4">
         @csrf 
