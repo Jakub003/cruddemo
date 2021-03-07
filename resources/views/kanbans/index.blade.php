@@ -17,7 +17,6 @@
     @endif
 
     @foreach ($kanbans as $kanban)
-    
     <div class="px-4 flex space-x-4">
         {{-- Display --}}
         <div class="h-8 w-8 px-2 py-1 rounded {{ $kanban->color }} ">
@@ -37,10 +36,14 @@
             </button>    
         </form>
 
+        @foreach ($kanban_tags as $kanban_tag)
+        <button class="flex flex-row my-2 focus:outline-none rounded text-sm p-1 {{ $kanban_tag->tag_color }} items-center"> 
+            <i class="{{ $kanban_tag->tag_icon }} transform -translate-y-0.5"></i>
+            <h2 class="px-1">{{ $kanban_tag->tag_name }}</h2>
+        </button>
+        @endforeach
           
     </div>
-   
-        
     @endforeach
 
 @endsection

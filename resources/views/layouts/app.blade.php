@@ -11,7 +11,6 @@
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.6.x/dist/index.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
     <style>
         
     </style>
@@ -26,7 +25,7 @@
     </div>
 
     {{-- Main Content --}}
-    <div class="flex flex-col space-y-4 w-full bg-blueGray-100">
+    <div class="flex flex-col w-full bg-blueGray-100">
         @yield('content')
     </div>
 

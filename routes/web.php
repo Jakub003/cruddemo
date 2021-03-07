@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KanbanController;
+use App\Http\Controllers\KanbanTagController;
 
 // Kanban
 Route::get('kanban', [KanbanController::class, 'index'])->name('kanban');
@@ -13,7 +14,6 @@ Route::get('kanban/{kanban}/show', [KanbanController::class, 'show'])->name('kan
 Route::delete('kanban/{kanban}', [KanbanController::class, 'destroy'])->name('kanban.destroy');
 
 // Route::resource('kanbans', KanbanController::class);
-
 
 Route::get('/', function () {
     return view('welcome');
