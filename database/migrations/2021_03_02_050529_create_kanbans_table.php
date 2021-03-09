@@ -15,9 +15,10 @@ class CreateKanbansTable extends Migration
     {
         Schema::create('kanbans', function (Blueprint $table) {
             $table->id();
-            $table->string('color');
-            $table->string('icon');
-            $table->string('title');
+            $table->string('kanban_color');
+            $table->string('kanban_icon');
+            $table->string('kanban_title');
+            // $table->integer('kanban_order');
             $table->timestamps();
         });
     }

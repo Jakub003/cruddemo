@@ -10,10 +10,10 @@
 <div class="flex h-16 border-b border-gray-200"> 
     <div class="flex space-x-4">
         <div class="flex p-4 space-x-4">
-            <div class="h-8 w-8 px-2 py-1 rounded {{ $kanban->color }}">
-                <i class="text-base {{ $kanban->icon }}"></i>
+            <div class="h-8 w-8 px-2 py-1 rounded {{ $kanban->kanban_color }}">
+                <i class="text-base {{ $kanban->kanban_icon }}"></i>
             </div>
-            <h2 class="h-8 text-base font-semibold mt-1">{{ $kanban->title }}</h2>
+            <h2 class="h-8 text-base font-semibold mt-1">{{ $kanban->kanban_title }}</h2>
         </div>
     </div>
 
@@ -22,10 +22,12 @@
 {{-- Toggle Buttons --}}
 <div class="flex flex-row justify-between h-16 border-b border-gray-200 pl-4 items-center">
     <div class="flex flex-wrap space-x-4 items-center">
-        <button class="flex flex-row  focus:outline-none bg-red-300 hover:bg-red-500 rounded text-sm text-white p-1  items-center"> 
-            <i class="bi bi-bug transform -translate-y-0.5"></i>
-            <h2 class="px-1">Bugs</h2>
+        @foreach ($kanban->tags as $kanban_tag)
+        <button class="flex flex-row my-2 focus:outline-none rounded text-sm p-1 {{ $kanban_tag->tag_color }} items-center"> 
+            <i class="{{ $kanban_tag->tag_icon }} transform -translate-y-0.5"></i>
+            <h2 class="px-1">{{ $kanban_tag->tag_name }}</h2>
         </button>
+        @endforeach
         
 
     </div>
@@ -34,13 +36,14 @@
     </a>
 </div>
 
-{{-- Kanban --}}
+{{-- Kanban Columns --}}
 <div class="flex space-x-4 p-4">
+    @foreach ($kanban->columns as $kanban_column)
     <div class="flex flex-col w-72 flex-shrink-0 space-y-4">
         {{-- Title --}}
-        <div class="flex flex-row justify-between items-center py-3 px-2 border-b-2 border-red-400">
+        <div class="flex flex-row justify-between items-center py-3 px-2 border-b-2 {{ $kanban_column->column_color }}">
             <div class="flex flex-row  text-base font-semibold space-x-3 items-center"> 
-                <h2 class="">Backlog</h2>
+                <h2 class="">{{ $kanban_column->column_name }}</h2>
                 <h2 class="text-gray-400 text-xs">15</h2>
             </div>
             
@@ -49,6 +52,7 @@
             </button>
         </div>
     </div>
+    @endforeach
 </div>
         
 @endsection

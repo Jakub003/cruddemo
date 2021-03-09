@@ -28,14 +28,15 @@ class KanbanController extends Controller
     public function create()
     {
         return view('kanbans.create');
+        
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'color' => 'required',
-            'icon' => 'required',
-            'title' => 'required',
+            'kanban_color' => 'required',
+            'kanban_icon' => 'required',
+            'kanban_title' => 'required',
         ]);
     
         Kanban::create($request->all());
@@ -53,9 +54,9 @@ class KanbanController extends Controller
     public function update(Request $request, Kanban $kanban)
     {
         $request->validate([
-            'color' => 'required',
-            'icon' => 'required',
-            'title' => 'required',
+            'kanban_color' => 'required',
+            'kanban_icon' => 'required',
+            'kanban_title' => 'required',
         ]);
     
         $kanban->update($request->all());

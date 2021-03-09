@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKanbanTagsTable extends Migration
+class CreateKanbanTasksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateKanbanTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('kanban_tags', function (Blueprint $table) {
+        Schema::create('kanban_tasks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kanban_id')->constrained();
-            $table->string('tag_color');
-            $table->string('tag_icon');
-            $table->string('tag_name');
-            // $table->integer('tag_order');
+            $table->foreignId('kanban_column_id')->constrained();
+            $table->string('task_title');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateKanbanTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kanban_tags');
+        Schema::dropIfExists('kanban_tasks');
     }
 }

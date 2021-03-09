@@ -10,9 +10,20 @@ class Kanban extends Model
     use HasFactory;
 
     protected $fillable = [
-        'color', 
-        'icon',
-        'title'
+        'kanban_color', 
+        'kanban_icon',
+        'kanban_title'
     ];
 
+    public function tags(){
+        return $this->hasMany('App\Models\KanbanTag');
+    }
+
+    public function columns(){
+        return $this->hasMany('App\Models\KanbanColumn');
+    }
+
+    public function pages(){
+        return $this->hasMany('App\Models\KanbanPage');
+    }
 }

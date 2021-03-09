@@ -19,10 +19,10 @@
     @foreach ($kanbans as $kanban)
     <div class="px-4 flex space-x-4">
         {{-- Display --}}
-        <div class="h-8 w-8 px-2 py-1 rounded {{ $kanban->color }} ">
-            <i class=" text-base {{ $kanban->icon }} "></i>
+        <div class="h-8 w-8 px-2 py-1 rounded {{ $kanban->kanban_color }} ">
+            <i class=" text-base {{ $kanban->kanban_icon }} "></i>
         </div>     
-        <h3 class="h-8 text-base font-semibold mt-1">{{ $kanban->title }}</h3>   
+        <h3 class="h-8 text-base font-semibold mt-1">{{ $kanban->kanban_title }}</h3>   
         
         {{-- Edit --}}
         <a class="h-8 w-8 text-yellow-500 rounded" href="{{ route('kanban.edit',$kanban->id) }}"><i class=" bi bi-pencil-square "></i></a>
@@ -36,12 +36,7 @@
             </button>    
         </form>
 
-        @foreach ($kanban_tags as $kanban_tag)
-        <button class="flex flex-row my-2 focus:outline-none rounded text-sm p-1 {{ $kanban_tag->tag_color }} items-center"> 
-            <i class="{{ $kanban_tag->tag_icon }} transform -translate-y-0.5"></i>
-            <h2 class="px-1">{{ $kanban_tag->tag_name }}</h2>
-        </button>
-        @endforeach
+
           
     </div>
     @endforeach

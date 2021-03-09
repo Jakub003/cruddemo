@@ -17,21 +17,21 @@ class KanbanSeeder extends Seeder
     public function run()
     {
         DB::table('kanbans')->insert([
-            'color' => 'bg-green-200 text-green-500',
-            'icon' => 'bi bi-alarm-fill',
-            'title' => 'Alarm Project',
+            'kanban_color' => 'bg-green-200 text-green-500',
+            'kanban_icon' => 'bi bi-alarm-fill',
+            'kanban_title' => 'Alarm Project',
         ]);
 
         DB::table('kanbans')->insert([
-            'color' => 'bg-blue-200 text-blue-500',
-            'icon' => 'bi bi-archive-fill',
-            'title' => 'Random Project',
+            'kanban_color' => 'bg-blue-200 text-blue-500',
+            'kanban_icon' => 'bi bi-archive-fill',
+            'kanban_title' => 'Random Project',
         ]);
 
         DB::table('kanbans')->insert([
-            'color' => 'bg-red-200 text-red-500',
-            'icon' => 'bi bi-arrow-left-circle-fill',
-            'title' => 'Arrow Project',
+            'kanban_color' => 'bg-red-200 text-red-500',
+            'kanban_icon' => 'bi bi-arrow-left-circle-fill',
+            'kanban_title' => 'Arrow Project',
         ]);
     }
 }
