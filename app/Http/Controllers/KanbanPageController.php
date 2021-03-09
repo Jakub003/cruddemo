@@ -46,9 +46,9 @@ class KanbanPageController extends Controller
      * @param  \App\Models\KanbanPage  $kanbanPage
      * @return \Illuminate\Http\Response
      */
-    public function show(KanbanPage $kanbanPage)
+    public function show(Kanban $kanban)
     {
-        return view('kanbans.show',compact('kanban'));
+        return view('kanbans.show_page',compact('kanban'));
     }
 
 

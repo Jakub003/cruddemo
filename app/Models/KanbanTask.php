@@ -18,6 +18,6 @@ class KanbanTask extends Model
 
     public function KanbanTag()
     {
-        return $this->belongsTo(KanbanColumn::class);
+        return $this->belongsTo(Kanban::class);
     }
 }

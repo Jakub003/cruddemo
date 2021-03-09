@@ -37,10 +37,10 @@
 </div>
 
 {{-- Kanban Columns --}}
-<div class="flex space-x-4 p-4 overflow-hidden">
+<div class="flex space-x-4 p-4">
 
     @foreach ($kanban->columns as $kanban_column)
-        <div class="flex flex-col w-72 flex-shrink-0 space-y-4 ">
+        <div class="flex flex-col w-72 flex-shrink-0 space-y-4">
             {{-- Title --}}
             <div class="flex flex-row justify-between items-center py-3 px-2 border-b-2 {{ $kanban_column->column_color }}">
                 <div class="flex flex-row  text-base font-semibold space-x-3 items-center"> 
@@ -54,24 +54,34 @@
             </div>
 
             {{-- Tasks Start --}}
-            <div class="space-y-4 overflow-y-auto no-scrollbar">
-                @foreach ($kanban->tasks as $kanban_task)
-                <div class="group flex flex-col mx-1.5 bg-white rounded-md shadow hover:shadow-lg">
+            {{-- ForEachLoop Start --}}
+                
+                <div class="group flex flex-col bg-white rounded-md shadow hover:shadow-xl">
 
                     <!-- Task Tags -->
                     <div class="flex space-x-2 px-2 py-1 m-4 items-center">
-                        <div class="flex flex-row bg-gray-100 rounded space-x-2 text-sm text-gray-700 p-1  items-center"> 
-                            <i class="bi bi-hash transform -translate-y-0.5"></i>
-                            <h2> kanban </h2>
-                        </div>
-                        <h2 class="bg-green-200 border  rounded text-sm text-gray-700  p-1 items-center"> crud </h2>  
+                        {{-- Kanban Page Tag --}}
+                        @foreach ($kanban->pages as $kanban_page)
+                            <div class="flex flex-row items-center space-x-1">
+                                <i class="text-xs bi bi-hash mb-1"></i>
+                                <div class="flex flex-row text-sm ">{{ $kanban_page->page_name }}</div>
+                            </div>
+                        @endforeach 
+
+                        {{-- Kanban Task Tag --}}
+                        @foreach ($kanban->tags as $kanban_tag)
+                            <button class="flex flex-row my-2 focus:outline-none rounded text-sm p-1 {{ $kanban_tag->tag_color }} items-center"> 
+                                <i class="{{ $kanban_tag->tag_icon }} transform -translate-y-0.5"></i>
+                                <h2 class="px-1">{{ $kanban_tag->tag_name }}</h2>
+                            </button>
+                        @endforeach  
                     </div>
 
                     <!-- Task Title -->
                     <div class="flex flex-row space-x-2 px-4 items-center space-x-2"> 
                         <i class="bi bi-diamond-fill text-xs text-green-500 transform -translate-y-0.5"></i>
                         <a href="#">   
-                            <h2 class="text-sm transnform -translate-y-1 hover:text-blue-500 ">{{ $kanban_task->task_title }}</h2> 
+                            <h2 class="text-sm transnform -translate-y-1 hover:text-blue-500 ">Title of card example</h2> 
                         </a>
                     </div>
 
@@ -102,11 +112,10 @@
                         </div>
                     </div>
                 </div>
-                    
-                    
-                @endforeach
-                {{-- Tasks End --}}
-            </div>
+                
+            {{-- ForEachLoop End --}}
+            {{-- Tasks End --}}
+
 
         </div>
     @endforeach
