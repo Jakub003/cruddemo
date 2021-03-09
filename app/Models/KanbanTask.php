@@ -13,6 +13,7 @@ class KanbanTask extends Model
         'kanban_id',
         'kanban_column_id',
         'kanban_page_id', 
+        'kanban_tag_id', 
         'task_title',
     ];
 

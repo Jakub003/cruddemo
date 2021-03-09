@@ -20,6 +20,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '1',
             'kanban_column_id' => '1',
             'kanban_page_id' => '1',
+            'kanban_tag_id' => '1',
             'task_title' => 'create mockup',
         ]);
 
@@ -27,6 +28,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '1',
             'kanban_column_id' => '1',
             'kanban_page_id' => '1',
+            'kanban_tag_id' => '2',
             'task_title' => 'find logo',
         ]);
 
@@ -34,6 +36,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '1',
             'kanban_column_id' => '1',
             'kanban_page_id' => '1',
+            'kanban_tag_id' => '1',
             'task_title' => 'creating social media accounts',
         ]);
 
@@ -41,6 +44,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '1',
             'kanban_column_id' => '2',
             'kanban_page_id' => '1',
+            'kanban_tag_id' => '1',
             'task_title' => 'youtube background design',
         ]);
 
@@ -48,6 +52,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '1',
             'kanban_column_id' => '2',
             'kanban_page_id' => '1',
+            'kanban_tag_id' => '2',
             'task_title' => 'home page design',
         ]);
 
@@ -55,6 +60,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '1',
             'kanban_column_id' => '2',
             'kanban_page_id' => '2',
+            'kanban_tag_id' => '2',
             'task_title' => 'profle design',
         ]);
 
@@ -62,6 +68,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '1',
             'kanban_column_id' => '2',
             'kanban_page_id' => '2',
+            'kanban_tag_id' => '1',
             'task_title' => 'profle seeders and basic crud',
         ]);
 
@@ -69,6 +76,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '1',
             'kanban_column_id' => '4',
             'kanban_page_id' => '2',
+            'kanban_tag_id' => '1',
             'task_title' => 'profile mockup',
         ]);
 
@@ -76,6 +84,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '1',
             'kanban_column_id' => '3',
             'kanban_page_id' => '3',
+            'kanban_tag_id' => '1',
             'task_title' => 'dashboard basic crud',
         ]);
 
@@ -83,6 +92,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '1',
             'kanban_column_id' => '3',
             'kanban_page_id' => '3',
+            'kanban_tag_id' => '1',
             'task_title' => 'dashboard mockup',
         ]);
 
@@ -90,6 +100,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '1',
             'kanban_column_id' => '4',
             'kanban_page_id' => '3',
+            'kanban_tag_id' => '1',
             'task_title' => 'dashboard ideas',
         ]);
 
@@ -97,6 +108,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '1',
             'kanban_column_id' => '1',
             'kanban_page_id' => '4',
+            'kanban_tag_id' => '1',
             'task_title' => 'kanban layout',
         ]);
 
@@ -104,6 +116,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '1',
             'kanban_column_id' => '2',
             'kanban_page_id' => '4',
+            'kanban_tag_id' => '1',
             'task_title' => 'adobe xd mockup',
         ]);
 
@@ -111,6 +124,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '1',
             'kanban_column_id' => '3',
             'kanban_page_id' => '4',
+            'kanban_tag_id' => '1',
             'task_title' => 'kanban seeders ',
         ]);
 
@@ -118,6 +132,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '1',
             'kanban_column_id' => '4',
             'kanban_page_id' => '4',
+            'kanban_tag_id' => '1',
             'task_title' => 'kanban pages design ',
         ]);
 
@@ -125,6 +140,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '2',
             'kanban_column_id' => '5',
             'kanban_page_id' => '5',
+            'kanban_tag_id' => '3',
             'task_title' => 'testing ideas ',
         ]);
 
@@ -132,6 +148,7 @@ class KanbanTaskSeeder extends Seeder
             'kanban_id' => '3',
             'kanban_column_id' => '7',
             'kanban_page_id' => '8',
+            'kanban_tag_id' => '4',
             'task_title' => 'arrow project test ',
         ]);
        

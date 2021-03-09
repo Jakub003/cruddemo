@@ -56,19 +56,28 @@
             {{-- Tasks Start --}}
             <div class="space-y-4 overflow-y-auto no-scrollbar">
                 @foreach ($kanban->tasks as $kanban_task)
-                    
+                    @if($kanban_column->id == $kanban_task->kanban_column_id )
                         <div class="group flex flex-col mx-1.5 bg-white rounded-md shadow hover:shadow-lg">
 
                             <!-- Task Tags -->
                             <div class="flex space-x-4 py-1 m-4 items-center">
-                                <div class="flex flex-row bg-gray-100 rounded space-x-2 text-sm text-gray-700 px-2 py-1  items-center"> 
-                                    <i class="bi bi-hash transform -translate-y-0.5"></i>
-                                    <h2> Page </h2>
-                                </div>
-                                <button class="flex flex-row my-2 focus:outline-none rounded text-sm p-1 {{ $kanban_tag->tag_color }} items-center"> 
-                                    <i class="{{ $kanban_tag->tag_icon }} transform -translate-y-0.5"></i>
-                                    <h2 class="px-1">{{ $kanban_tag->tag_name }}</h2>
-                                </button>
+                                @foreach ($kanban->pages as $kanban_page)
+                                    @if($kanban_page->id == $kanban_task->kanban_page_id )
+                                        <div class="flex flex-row bg-gray-100 rounded space-x-2 text-sm text-gray-700 px-2 py-1  items-center"> 
+                                            <i class="bi bi-hash transform -translate-y-0.5"></i>
+                                            <h2> {{ $kanban_page->page_name }} </h2>
+                                        </div>
+                                    @endif
+                                @endforeach
+                                
+                                @foreach ($kanban->tags as $kanban_tag)
+                                    @if($kanban_tag->id == $kanban_task->kanban_tag_id )
+                                        <button class="flex flex-row my-2 focus:outline-none rounded text-sm p-1 {{ $kanban_tag->tag_color }} items-center"> 
+                                            <i class="{{ $kanban_tag->tag_icon }} transform -translate-y-0.5"></i>
+                                            <h2 class="px-1">{{ $kanban_tag->tag_name }}</h2>
+                                        </button>
+                                    @endif
+                                @endforeach
                             </div>
 
                             <!-- Task Title -->
@@ -76,7 +85,7 @@
                                 {{-- <i class="bi bi-diamond-fill text-xs text-green-500 transform -translate-y-0.5"></i> --}}
                                 <a href="#">   
                                     <h2 class="text-sm transnform -translate-y-1 hover:text-blue-500 ">{{ $kanban_task->task_title }}</h2> 
-                                </a>
+                                </a>          
                             </div>
 
                             <!-- Task Divider -->
@@ -106,6 +115,7 @@
                                 </div>
                             </div>
                         </div>
+                    @endif
                    
                     
                 @endforeach

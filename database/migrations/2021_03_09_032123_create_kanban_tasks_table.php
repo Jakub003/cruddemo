@@ -18,6 +18,7 @@ class CreateKanbanTasksTable extends Migration
             $table->foreignId('kanban_id')->constrained();
             $table->foreignId('kanban_column_id')->nullable();
             $table->foreignId('kanban_page_id')->nullable();
+            $table->foreignId('kanban_tag_id')->nullable();
             $table->string('task_title');
             $table->timestamps();
         });

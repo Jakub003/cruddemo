@@ -16,7 +16,7 @@ Route::get('kanban/{kanban}/show_all', [KanbanController::class, 'showAll'])->na
 Route::delete('kanban/{kanban}', [KanbanController::class, 'destroy'])->name('kanban.destroy');
 
 // Kanban Pages
-Route::get('kanban/{kanban}/{page}/show', [KanbanPageController::class, 'show'])->name('kanban.page.show');
+// Route::get('kanban/{kanban}/{page}/show', [KanbanPageController::class, 'show'])->name('kanban.page.show');
 
 // Kanban Tags
 // Route::post('kanban/store', [KanbanTagController::class, 'store'])->name('kanban.tag.store');
