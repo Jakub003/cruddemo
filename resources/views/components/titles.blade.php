@@ -21,7 +21,7 @@
         {{-- Pages --}}
         <div class="p-2 rounded-lg bg-blueGray-100 ">
             <a href="{{ route('kanban.show',$kanban->id) }}">
-                <div class="flex flex-row justify-between items-center w-full border border-white rounded  px-2 py-1 mt-1.5 text-white bg-blue-500">
+                <div class="flex flex-row justify-between items-center w-full border border-white rounded  px-2 py-1 mt-1.5 bg-white hover:bg-blue-500 hover:text-white hover:border-blue-500">
                     <div class="flex flex-row text-sm ">All Tasks</div>
                     <div class="h-4 w-4 rounded text-xs text-white "> 15 </div>
                 </div>
