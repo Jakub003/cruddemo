@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\KanbanTag;
 
 class KanbanTask extends Model
 {
@@ -12,13 +13,15 @@ class KanbanTask extends Model
     protected $fillable = [
         'kanban_id',
         'kanban_column_id',
-        'kanban_page_id', 
-        'kanban_tag_id', 
+        'kanban_page_id',
+        'kanban_tag_id',
         'task_title',
     ];
 
     public function KanbanTag()
     {
-        return $this->belongsTo(Kanban::class);
+        return $this->belongsTo(KanbanTag::class, 'kanban_tag_id');
     }
+
+
 }

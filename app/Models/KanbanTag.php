@@ -4,13 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\KanbanTask;
 
 class KanbanTag extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'kanban_id', 
+        'kanban_id',
         'tag_color',
         'tag_icon',
         'tag_name'
@@ -19,5 +20,10 @@ class KanbanTag extends Model
     public function KanbanTag()
     {
         return $this->belongsTo(Kanban::class);
+    }
+
+    public function tasks()
+    {
+        return $this->hasMany(KanbanTask::class, 'kanban_tag_id');
     }
 }

@@ -4,13 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\KanbanTask;
 
 class KanbanColumn extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
-        'kanban_id', 
+        'kanban_id',
         'column_color',
         'column_name'
     ];
@@ -20,5 +21,10 @@ class KanbanColumn extends Model
         return $this->belongsTo(Kanban::class);
     }
 
-    
+    public function tasks()
+    {
+        return $this->hasMany(KanbanTask::class);
+    }
+
+
 }

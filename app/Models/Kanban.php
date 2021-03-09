@@ -10,7 +10,7 @@ class Kanban extends Model
     use HasFactory;
 
     protected $fillable = [
-        'kanban_color', 
+        'kanban_color',
         'kanban_icon',
         'kanban_title'
     ];
@@ -27,7 +27,7 @@ class Kanban extends Model
         return $this->hasMany('App\Models\KanbanPage');
     }
 
-    public function tasks(){
-        return $this->hasMany('App\Models\KanbanTask');
-    }
+    // public function tasks(){
+    //     return $this->hasMany('App\Models\KanbanTask');
+    // }
 }

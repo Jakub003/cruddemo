@@ -1,33 +1,31 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Kanban;  
+use App\Models\Kanban;
 
 use Illuminate\Http\Request;
 
 class KanbanController extends Controller
 {
-    // Display Content - Only on a specific page that is specified 
+    // Display Content - Only on a specific page that is specified
     public function index()
     {
         $kanbans = Kanban::get();
-        
         return view('kanbans.index',compact('kanbans'));
-
-        
     }
 
     // Display Individual Kanban Projects
     public function showAll(Kanban $kanban)
     {
+        $kandan = Kanban::with(['tags', 'columns', 'pages'])->find($kanban);
         return view('kanbans.show_all',compact('kanban'));
-    } 
+    }
 
     // Adding Content and Saving It
     public function create()
     {
         return view('kanbans.create');
-        
+
     }
 
     public function store(Request $request)
@@ -37,9 +35,9 @@ class KanbanController extends Controller
             'kanban_icon' => 'required',
             'kanban_title' => 'required',
         ]);
-    
+
         Kanban::create($request->all());
-     
+
         return redirect()->route('kanban')
                         ->with('success','Title created successfully.');
     }
@@ -57,9 +55,9 @@ class KanbanController extends Controller
             'kanban_icon' => 'required',
             'kanban_title' => 'required',
         ]);
-    
+
         $kanban->update($request->all());
-    
+
         return redirect()->route('kanban')
                         ->with('success','Title updated successfully');
     }
@@ -68,7 +66,7 @@ class KanbanController extends Controller
     public function destroy(Kanban $kanban)
     {
         $kanban->delete();
-    
+
         return redirect()->route('kanban')
                         ->with('success','Item deleted successfully');
     }
