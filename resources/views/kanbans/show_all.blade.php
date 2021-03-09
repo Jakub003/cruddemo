@@ -20,7 +20,7 @@
 </div>
 
 {{-- Toggle Buttons --}}
-<div class="flex flex-row justify-between h-16 border-b border-gray-200 pl-4 items-center">
+<div class="flex flex-row justify-between h-16 border-b border-gray-200 pl-4 items-center flex-shrink-0">
     <div class="flex flex-wrap space-x-4 items-center">
         @foreach ($kanban->tags as $kanban_tag)
             <button class="flex flex-row my-2 focus:outline-none rounded text-sm p-1 {{ $kanban_tag->tag_color }} items-center"> 
@@ -56,53 +56,57 @@
             {{-- Tasks Start --}}
             <div class="space-y-4 overflow-y-auto no-scrollbar">
                 @foreach ($kanban->tasks as $kanban_task)
-                <div class="group flex flex-col mx-1.5 bg-white rounded-md shadow hover:shadow-lg">
-
-                    <!-- Task Tags -->
-                    <div class="flex space-x-2 px-2 py-1 m-4 items-center">
-                        <div class="flex flex-row bg-gray-100 rounded space-x-2 text-sm text-gray-700 p-1  items-center"> 
-                            <i class="bi bi-hash transform -translate-y-0.5"></i>
-                            <h2> kanban </h2>
-                        </div>
-                        <h2 class="bg-green-200 border  rounded text-sm text-gray-700  p-1 items-center"> crud </h2>  
-                    </div>
-
-                    <!-- Task Title -->
-                    <div class="flex flex-row space-x-2 px-4 items-center space-x-2"> 
-                        <i class="bi bi-diamond-fill text-xs text-green-500 transform -translate-y-0.5"></i>
-                        <a href="#">   
-                            <h2 class="text-sm transnform -translate-y-1 hover:text-blue-500 ">{{ $kanban_task->task_title }}</h2> 
-                        </a>
-                    </div>
-
-                    <!-- Task Divider -->
-                    <div class="border-b border-gray-200 py-2"></div>
-
-                    <!-- Task Features -->
-                    <div class="flex flex-row px-4 py-2 justify-between items-center"> 
-                        <div class="flex flex-row text-xs text-gray-400 space-x-3 "> 
-                            <div class="flex flex-row space-x-1 px-2 py-1 rounded hover:bg-gray-100 hover:text-black  "> 
-                                <i class="bi bi-chat-square transform -translate-y-0.5 "></i>
-                                <h2 class="">18</h2>
-                            </div>
-                            <div class="flex flex-row space-x-1 px-2 py-1 rounded hover:bg-gray-100 hover:text-black "> 
-                                <i class="bi bi-paperclip transform -translate-y-0.5 "></i>
-                                <h2>7</h2>
-                            </div>
-                            <div class="flex flex-row space-x-1  px-2 py-1 rounded hover:bg-gray-100 hover:text-black "> 
-                                <i class="bi bi-check-square transform -translate-y-0.5"></i>
-                                <h2>3 / 14</h2>
-                            </div>
-                        </div>
-                        <div class="flex flex-row"> 
-                            <div> 
-                                <img src="https://demos.creative-tim.com/tailwindcss-starter-project/_next/static/images/team-4-470x470-4ef82ef45a9598d24c4c951ead4d626a.png" 
-                                    class="shadow rounded-full max-w-full h-6">
-                            </div>
-                        </div>
-                    </div>
-                </div>
                     
+                        <div class="group flex flex-col mx-1.5 bg-white rounded-md shadow hover:shadow-lg">
+
+                            <!-- Task Tags -->
+                            <div class="flex space-x-4 py-1 m-4 items-center">
+                                <div class="flex flex-row bg-gray-100 rounded space-x-2 text-sm text-gray-700 px-2 py-1  items-center"> 
+                                    <i class="bi bi-hash transform -translate-y-0.5"></i>
+                                    <h2> Page </h2>
+                                </div>
+                                <button class="flex flex-row my-2 focus:outline-none rounded text-sm p-1 {{ $kanban_tag->tag_color }} items-center"> 
+                                    <i class="{{ $kanban_tag->tag_icon }} transform -translate-y-0.5"></i>
+                                    <h2 class="px-1">{{ $kanban_tag->tag_name }}</h2>
+                                </button>
+                            </div>
+
+                            <!-- Task Title -->
+                            <div class="flex flex-row space-x-2 px-4 items-center space-x-2"> 
+                                {{-- <i class="bi bi-diamond-fill text-xs text-green-500 transform -translate-y-0.5"></i> --}}
+                                <a href="#">   
+                                    <h2 class="text-sm transnform -translate-y-1 hover:text-blue-500 ">{{ $kanban_task->task_title }}</h2> 
+                                </a>
+                            </div>
+
+                            <!-- Task Divider -->
+                            <div class="border-b border-gray-200 py-2"></div>
+
+                            <!-- Task Features -->
+                            <div class="flex flex-row px-4 py-2 justify-between items-center"> 
+                                <div class="flex flex-row text-xs text-gray-400 space-x-3 "> 
+                                    <div class="flex flex-row space-x-1 px-2 py-1 rounded hover:bg-gray-100 hover:text-black  "> 
+                                        <i class="bi bi-chat-square transform -translate-y-0.5 "></i>
+                                        <h2 class="">18</h2>
+                                    </div>
+                                    <div class="flex flex-row space-x-1 px-2 py-1 rounded hover:bg-gray-100 hover:text-black "> 
+                                        <i class="bi bi-paperclip transform -translate-y-0.5 "></i>
+                                        <h2>7</h2>
+                                    </div>
+                                    <div class="flex flex-row space-x-1  px-2 py-1 rounded hover:bg-gray-100 hover:text-black "> 
+                                        <i class="bi bi-check-square transform -translate-y-0.5"></i>
+                                        <h2>3 / 14</h2>
+                                    </div>
+                                </div>
+                                <div class="flex flex-row"> 
+                                    <div> 
+                                        <img src="https://demos.creative-tim.com/tailwindcss-starter-project/_next/static/images/team-4-470x470-4ef82ef45a9598d24c4c951ead4d626a.png" 
+                                            class="shadow rounded-full max-w-full h-6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   
                     
                 @endforeach
                 {{-- Tasks End --}}
