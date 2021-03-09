@@ -8,13 +8,38 @@
 </div>
 
 <div class="flex flex-col space-y-4">
+    {{-- Title --}}
     @foreach ($kanbans as $kanban)
-        <a href="{{ route('kanban.show',$kanban->id) }}" class="flex space-x-4 px-4">    
+    <div class=" flex flex-col space-y-2 px-4">
+        <a href="{{ route('kanban.show',$kanban->id) }}" class="flex space-x-4 ">    
             <div class="h-8 w-8 px-2 py-1 rounded {{ $kanban->kanban_color }} ">
                 <i class=" text-base {{ $kanban->kanban_icon }} "></i>
             </div>     
             <h3 class="h-8 text-base font-semibold mt-1">{{ $kanban->kanban_title }}</h3>         
         </a>
+
+        {{-- Pages --}}
+        <div class="p-2 rounded-lg bg-blueGray-100 ">
+            <div class="flex flex-row justify-between items-center w-full border border-white rounded  px-2 py-1 mt-1.5 text-white bg-blue-500">
+                <div class="flex flex-row text-sm ">All Tasks</div>
+                <div class="h-4 w-4 rounded text-xs text-white "> 15 </div>
+            </div>
+            @foreach ($kanban->pages as $kanban_page)
+                <a href="{{ route('kanban.show',$kanban->id) }}">
+                    <div class="flex flex-row justify-between items-center w-full border border-white rounded  px-2 py-1 mt-1.5 bg-white hover:bg-blue-500 hover:text-white hover:border-blue-500">
+                        <div class="flex flex-row items-center space-x-1">
+                            <i class="text-xs bi bi-hash mb-1"></i>
+                            <div class="flex flex-row text-sm ">{{ $kanban_page->page_name }}</div>
+                        </div>
+                        <div class="h-4 w-4 rounded text-xs "> 25 </div>
+                    </div>
+                </a>
+                    
+            @endforeach
+            
+        </div>
+    </div>
+
     @endforeach
 </div>
 

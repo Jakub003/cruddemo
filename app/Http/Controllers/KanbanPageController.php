@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kanban; 
 use App\Models\KanbanPage;
+
 use Illuminate\Http\Request;
 
 class KanbanPageController extends Controller
@@ -46,8 +48,9 @@ class KanbanPageController extends Controller
      */
     public function show(KanbanPage $kanbanPage)
     {
-        //
+        return view('kanbans.show',compact('kanban'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

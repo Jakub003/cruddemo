@@ -17,43 +17,123 @@ class KanbanTaskSeeder extends Seeder
     public function run()
     {
         DB::table('kanban_tasks')->insert([
+            'kanban_id' => '1',
             'kanban_column_id' => '1',
-            'task_title' => 'create crud layout',
+            'kanban_page_id' => '1',
+            'task_title' => 'create mockup',
         ]);
+
         DB::table('kanban_tasks')->insert([
+            'kanban_id' => '1',
             'kanban_column_id' => '1',
-            'task_title' => 'design dashboard',
+            'kanban_page_id' => '1',
+            'task_title' => 'find logo',
         ]);
+
         DB::table('kanban_tasks')->insert([
+            'kanban_id' => '1',
             'kanban_column_id' => '1',
-            'task_title' => 'add features',
+            'kanban_page_id' => '1',
+            'task_title' => 'creating social media accounts',
         ]);
+
         DB::table('kanban_tasks')->insert([
+            'kanban_id' => '1',
             'kanban_column_id' => '2',
-            'task_title' => 'page models',
+            'kanban_page_id' => '1',
+            'task_title' => 'youtube background design',
         ]);
+
         DB::table('kanban_tasks')->insert([
-            'kanban_column_id' => '3',
-            'task_title' => 'alpine js accordian guide',
+            'kanban_id' => '1',
+            'kanban_column_id' => '2',
+            'kanban_page_id' => '1',
+            'task_title' => 'home page design',
         ]);
+
         DB::table('kanban_tasks')->insert([
+            'kanban_id' => '1',
+            'kanban_column_id' => '2',
+            'kanban_page_id' => '2',
+            'task_title' => 'profle design',
+        ]);
+
+        DB::table('kanban_tasks')->insert([
+            'kanban_id' => '1',
+            'kanban_column_id' => '2',
+            'kanban_page_id' => '2',
+            'task_title' => 'profle seeders and basic crud',
+        ]);
+
+        DB::table('kanban_tasks')->insert([
+            'kanban_id' => '1',
             'kanban_column_id' => '4',
-            'task_title' => 'user authentication',
+            'kanban_page_id' => '2',
+            'task_title' => 'profile mockup',
         ]);
 
         DB::table('kanban_tasks')->insert([
+            'kanban_id' => '1',
+            'kanban_column_id' => '3',
+            'kanban_page_id' => '3',
+            'task_title' => 'dashboard basic crud',
+        ]);
+
+        DB::table('kanban_tasks')->insert([
+            'kanban_id' => '1',
+            'kanban_column_id' => '3',
+            'kanban_page_id' => '3',
+            'task_title' => 'dashboard mockup',
+        ]);
+
+        DB::table('kanban_tasks')->insert([
+            'kanban_id' => '1',
+            'kanban_column_id' => '4',
+            'kanban_page_id' => '3',
+            'task_title' => 'dashboard ideas',
+        ]);
+
+        DB::table('kanban_tasks')->insert([
+            'kanban_id' => '1',
+            'kanban_column_id' => '1',
+            'kanban_page_id' => '4',
+            'task_title' => 'kanban layout',
+        ]);
+
+        DB::table('kanban_tasks')->insert([
+            'kanban_id' => '1',
+            'kanban_column_id' => '2',
+            'kanban_page_id' => '4',
+            'task_title' => 'adobe xd mockup',
+        ]);
+
+        DB::table('kanban_tasks')->insert([
+            'kanban_id' => '1',
+            'kanban_column_id' => '3',
+            'kanban_page_id' => '4',
+            'task_title' => 'kanban seeders ',
+        ]);
+
+        DB::table('kanban_tasks')->insert([
+            'kanban_id' => '1',
+            'kanban_column_id' => '4',
+            'kanban_page_id' => '4',
+            'task_title' => 'kanban pages design ',
+        ]);
+
+        DB::table('kanban_tasks')->insert([
+            'kanban_id' => '2',
             'kanban_column_id' => '5',
-            'task_title' => 'testing titles',
+            'kanban_page_id' => '5',
+            'task_title' => 'testing ideas ',
         ]);
 
         DB::table('kanban_tasks')->insert([
-            'kanban_column_id' => '6',
-            'task_title' => 'another demo title',
-        ]);
-
-        DB::table('kanban_tasks')->insert([
+            'kanban_id' => '3',
             'kanban_column_id' => '7',
-            'task_title' => 'final title test',
+            'kanban_page_id' => '8',
+            'task_title' => 'arrow project test ',
         ]);
+       
     }
 }

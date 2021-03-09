@@ -15,7 +15,9 @@ class CreateKanbanTasksTable extends Migration
     {
         Schema::create('kanban_tasks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kanban_column_id')->constrained();
+            $table->foreignId('kanban_id')->constrained();
+            $table->foreignId('kanban_column_id')->nullable();
+            $table->foreignId('kanban_page_id')->nullable();
             $table->string('task_title');
             $table->timestamps();
         });

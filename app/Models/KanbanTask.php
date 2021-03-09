@@ -10,7 +10,9 @@ class KanbanTask extends Model
     use HasFactory;
 
     protected $fillable = [
-        'kanban_column_id', 
+        'kanban_id',
+        'kanban_column_id',
+        'kanban_page_id', 
         'task_title',
     ];
 

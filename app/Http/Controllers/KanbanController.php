@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Kanban; 
-use App\Models\KanbanTag; 
+use App\Models\Kanban;  
 
 use Illuminate\Http\Request;
 
@@ -19,9 +18,9 @@ class KanbanController extends Controller
     }
 
     // Display Individual Kanban Projects
-    public function show(Kanban $kanban)
+    public function showAll(Kanban $kanban)
     {
-        return view('kanbans.show',compact('kanban'));
+        return view('kanbans.show_all',compact('kanban'));
     } 
 
     // Adding Content and Saving It
