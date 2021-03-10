@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KanbanController;
 use App\Http\Controllers\KanbanPageController;
 use App\Http\Controllers\KanbanTagController;
+use App\Http\Controllers\KanbanTaskController;
 use App\Http\Controllers\KanbanColumnController;
 
 // Kanbans
@@ -15,8 +16,13 @@ Route::put('kanban/{kanban}/update', [KanbanController::class, 'update'])->name(
 Route::get('kanban/{kanban}/show_all', [KanbanController::class, 'showAll'])->name('kanban.show');
 Route::delete('kanban/{kanban}', [KanbanController::class, 'destroy'])->name('kanban.destroy');
 
+// Kanban Tasks
+Route::delete('kanban/{kanban_task}', [KanbanTaskController::class, 'destroy'])->name('kanban.task.destroy');
+
+Route::delete('kanban/{kanban_column}', [KanbanController::class, 'destroyColumn'])->name('kanban.column.destroy');
+
 // Kanban Pages
-// Route::get('kanban/{kanban}/{page}/show', [KanbanPageController::class, 'show'])->name('kanban.page.show');
+Route::get('kanban/{kanban}/1/show', [KanbanPageController::class, 'show'])->name('kanban.page.show');
 
 // Kanban Tags
 // Route::post('kanban/store', [KanbanTagController::class, 'store'])->name('kanban.tag.store');

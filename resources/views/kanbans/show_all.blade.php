@@ -55,8 +55,8 @@
 
             {{-- Tasks Start --}}
             <div class="space-y-4 overflow-y-auto no-scrollbar">
-                @foreach ($kanban->tasks as $kanban_task)
-                    @if($kanban_column->id == $kanban_task->kanban_column_id )
+                @foreach($kanban_column->tasks as $kanban_task)
+                    {{-- @if($kanban_column->id == $kanban_task->kanban_column_id ) --}}
                         <div class="group flex flex-col mx-1.5 bg-white rounded-md shadow hover:shadow-lg">
 
                             <!-- Task Tags -->
@@ -69,7 +69,8 @@
                                         </div>
                                     @endif
                                 @endforeach
-                                
+
+                                {{-- @foreach($kanban_task->tag as $kanban_tag) --}}
                                 @foreach ($kanban->tags as $kanban_tag)
                                     @if($kanban_tag->id == $kanban_task->kanban_tag_id )
                                         <button class="flex flex-row my-2 focus:outline-none rounded text-sm p-1 {{ $kanban_tag->tag_color }} items-center"> 
@@ -78,6 +79,8 @@
                                         </button>
                                     @endif
                                 @endforeach
+
+                                
                             </div>
 
                             <!-- Task Title -->
@@ -107,6 +110,13 @@
                                         <h2>3 / 14</h2>
                                     </div>
                                 </div>
+                                <form action="{{ route('kanban.task.destroy',$kanban_task->id) }}" method="POST" class="h-8 w-8">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class=" text-base focus:outline-none">
+                                        <i class="bi bi-x-circle-fill text-red-200 hover:text-red-500 cursor-pointer"></i>
+                                    </button>    
+                                </form>
                                 <div class="flex flex-row"> 
                                     <div> 
                                         <img src="https://demos.creative-tim.com/tailwindcss-starter-project/_next/static/images/team-4-470x470-4ef82ef45a9598d24c4c951ead4d626a.png" 
@@ -115,7 +125,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
+                  
                    
                     
                 @endforeach

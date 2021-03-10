@@ -78,8 +78,11 @@ class KanbanTaskController extends Controller
      * @param  \App\Models\KanbanTask  $kanbanTask
      * @return \Illuminate\Http\Response
      */
-    public function destroy(KanbanTask $kanbanTask)
+    public function destroy(KanbanTask $kanban_task)
     {
-        //
+        $kanban_task->delete();
+    
+        return redirect()->route('kanban')
+                        ->with('success','Item deleted successfully');
     }
 }

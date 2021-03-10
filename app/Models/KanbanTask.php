@@ -17,8 +17,12 @@ class KanbanTask extends Model
         'task_title',
     ];
 
-    public function KanbanTag()
+    public function KanbanTask()
     {
-        return $this->belongsTo(Kanban::class);
+        return $this->belongsTo(KanbanColumn::class);
+    }
+
+    public function tag(){
+        return $this->hasMany('App\Models\KanbanTag');
     }
 }

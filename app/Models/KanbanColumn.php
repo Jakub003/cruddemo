@@ -20,5 +20,7 @@ class KanbanColumn extends Model
         return $this->belongsTo(Kanban::class);
     }
 
-    
+    public function tasks(){
+        return $this->hasMany('App\Models\KanbanTask');
+    }
 }

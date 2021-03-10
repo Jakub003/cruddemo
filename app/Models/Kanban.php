@@ -27,7 +27,5 @@ class Kanban extends Model
         return $this->hasMany('App\Models\KanbanPage');
     }
 
-    public function tasks(){
-        return $this->hasMany('App\Models\KanbanTask');
-    }
+    
 }

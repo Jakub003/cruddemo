@@ -20,4 +20,10 @@ class KanbanTag extends Model
     {
         return $this->belongsTo(Kanban::class);
     }
+
+    public function TaskTag()
+    {
+        return $this->belongsTo(KanbanTask::class);
+    }
+
 }
